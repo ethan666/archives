@@ -1,7 +1,11 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-ReactDOM.render(
-    <p>hello world!</p>, 
-    document.getElementById('root')
-)
+const initApp = str=>{
+    ReactDOM.render(
+        <p>{str}</p>, 
+        document.getElementById('app')
+    )
+} 
+
+initApp('你好！');
