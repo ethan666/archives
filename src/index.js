@@ -1,11 +1,19 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 
-const initApp = str=>{
-    ReactDOM.render(
-        <p>{str}</p>, 
-        document.getElementById('app')
-    )
-} 
+import getRouter from './router/router';
 
-initApp('你好！');
+// const initApp = str=>{
+//     ReactDOM.render(
+//         <p>{str}</p>, 
+//         document.getElementById('app')
+//     )
+// } 
+
+// initApp('你好！');
+
+
+ReactDOM.render(
+    getRouter(), 
+    document.getElementById('app')
+)
