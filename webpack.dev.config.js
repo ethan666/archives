@@ -8,7 +8,7 @@ module.exports = {
     /*输出到dist文件夹，输出文件名字为bundle.js*/
     output: {
         path: path.join(__dirname, './dist'),
-        filename: 'index.js'
+        filename: 'main.js'
     },
 
     module: {
@@ -23,6 +23,6 @@ module.exports = {
         port: 8081,
         contentBase: path.join(__dirname, './dist'),
         historyApiFallback: true,
-        host: '0.0.0.0'
+        host: 'localhost'
     }
 };

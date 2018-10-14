@@ -9,11 +9,19 @@ const getRouter = () => (
         <div>
             <ul>
                 <li><Link to="/">首页</Link></li>
-                <li><Link to="/page1">Page1</Link></li>
+                <li><Link to="/page1">六六</Link></li>
+                <li><Link to="/page3">爷爷</Link></li>
+                <li><Link to="/page2">奶奶</Link></li>
+                <li><Link to="/page5">爸爸</Link></li>
+                <li><Link to="/page4">妈妈</Link></li>
             </ul>
             <Switch>
                 <Route exact path="/" component={Home}/>
                 <Route path="/page1" component={Page1}/>
+                <Route path="/page2" component={Page1}/>
+                <Route path="/page3" component={Page1}/>
+                <Route path="/page4" component={Page1}/>
+                <Route path="/page5" component={Page1}/>
             </Switch>
         </div>
     </Router>
