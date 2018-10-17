@@ -1,4 +1,6 @@
 const path = require('path');
+const CleanWebpackPlugin = require('clean-webpack-plugin');
+const CopyWebpackPlugin = require('copy-webpack-plugin');
 
 module.exports = {
  
@@ -10,6 +12,15 @@ module.exports = {
         path: path.join(__dirname, './dist'),
         filename: 'main.js'
     },
+
+    plugins: [
+        new CleanWebpackPlugin('dist'),
+        new CopyWebpackPlugin([
+            {
+                from: './public/index.html',
+                to: 'index.html'
+            }])
+    ],
 
     module: {
         rules: [{
