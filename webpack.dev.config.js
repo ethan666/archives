@@ -1,6 +1,7 @@
 const path = require('path');
 const CleanWebpackPlugin = require('clean-webpack-plugin');
 const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ExtractTextPlugin = require('extract-text-webpack-plugin');
 
 module.exports = {
  
@@ -15,6 +16,10 @@ module.exports = {
 
     plugins: [
         new CleanWebpackPlugin('dist'),
+        new ExtractTextPlugin({
+            filename: 'css/main.css',
+            allChunks: true
+        }),
         new CopyWebpackPlugin([
             {
                 from: './public/index.html',
@@ -23,17 +28,23 @@ module.exports = {
     ],
 
     module: {
-        rules: [{
-            test: /\.js$/,
-            use: ['babel-loader?cacheDirectory=true'],
-            include: path.join(__dirname, 'src')
-        }]
+        rules: [
+            {
+                test: /\.js$/,
+                use: ['babel-loader?cacheDirectory=true'],
+                include: path.join(__dirname, 'src')
+            },
+            {
+                test: /\.css$/,
+                use: [ 'style-loader', 'css-loader' ]
+            }
+        ]
     },
 
     devServer: {
-        port: 8081,
         contentBase: path.join(__dirname, './dist'),
-        historyApiFallback: true,
-        host: 'localhost'
+        historyApiFallback: true
+        // port: 8081,
+        // host: 'localhost'
     }
 };

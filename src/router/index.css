@@ -1,0 +1,20 @@
+:local .main{
+    display: flex;
+}
+
+:local .menu{
+    flex: 0 0 256px;
+    max-width: 256px;
+    min-width: 256px;
+    width: 256px;
+    box-shadow: 2px 0 6px rgba(0,21,41,.35);
+    background: #001529;
+}
+
+:local .main li{
+    color: #fff;
+}
+
+:local .rightLayout{
+    min-height: 100vh;
+}
